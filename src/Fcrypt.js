@@ -31,7 +31,7 @@ class Fcrypt {
 
 	static decrypt(file, secretKey) {
 		if (!file.match(/\.enc$/))
-			return new Error(`${file} is not a encrypted file`);
+			throw new Error(`${file} is not a encrypted file`);
 
 		const filePath = path.join(__dirname, '..', file);
 		const encryptedText = this.#readFile(filePath);
